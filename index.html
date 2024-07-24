@@ -25,7 +25,7 @@
       <div class="hero-header-11-content">
         <div class="container">
           <nav class="navbar navbar-expand-xl navbar-light py-sm-2 py-1 px-0">
-            <a class="navbar-brand editContent" href="index.html">*</a>
+            <a class="navbar-brand editContent" href="index.html"></a>
             <!-- if logo is image enable this   
 				<a class="navbar-brand" href="#index.html">
 						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -371,12 +371,28 @@
       <h3 class="global-title">Drop me a Message</h3>
       <div class="row">
         <div class="col-md-8 contact-form">
-          <form action="https://sendmail.w3layouts.com/submitForm" method="post">
-            <input type="text" class="form-control" name="w3lName" placeholder="Name" /><br />
-            <input type="email" class="form-control" name="w3lSender" placeholder="E-mail" /><br />
-            <input type="text" class="form-control" name="w3lSubject" placeholder="Subject" /><br />
-            <textarea class="form-control" name="w3lMessage" placeholder="Your Message" style="height:150px;"></textarea><br />
-            <button class="btn btn-primary theme-button" type="submit">Send</button>
+	  <form class="row g-3 needs-validation" novalidate>
+            <div class="col-12">
+	       <input type="text" class="form-control" name="Name" placeholder="Name" required /><br />
+            </div>
+		
+            <div class="col-12">
+            <label for="validationCustomUsername" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@gmail.com" required /><br />
+            </div>
+		
+           <div class="col-12">
+              <label for="validationCustomUsername" class="form-label"></label>
+              <input type="text" class="form-control" id="Subject" placeholder="Subject" required/><br>
+           </div>
+            
+            <div class="col-12">
+              <textarea class="form-control" id="Message" placeholder="Your Message" style="height:150px; " required></textarea><br />
+            </div>
+            
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
           </form>
         </div>
         <div class="col-md-4 mt-md-0 mt-5 w3-contact-address">
@@ -421,7 +437,7 @@
             <a href="#youtube" class="youtube"><span class="fa fa-youtube" aria-hidden="true"></span></a>
           </div>
           <div class="copyright mt-1">
-            <p>© 2020 Mix. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3Layouts</a></p>
+            <p>© 2020 Mix. All Rights Reserved | Design by <a href="https://layouts.com/">Layouts</a></p>
           </div>
         </div>
       </div>
@@ -458,7 +474,7 @@
   <!-- jQuery and Bootstrap JS -->
   <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <!-- Template JavaScript -->
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script>
@@ -518,6 +534,30 @@
     });
   </script>
 
+	  <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+     
+    })
+    window.alert("Successfully Submitted,Thank you");
+})()
+</script>
 
 </body>
 
